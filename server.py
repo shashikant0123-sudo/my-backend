@@ -410,7 +410,7 @@ async def upsert_prices(slug: str, body: PricingUpdate, x_admin_key: Optional[st
     return {"status": "saved", "slug": slug, "count": len(prices)}
 
 
-app.include_router(api_router)
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -424,7 +424,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
+app.include_router(api_router)
 
 @app.on_event("startup")
 async def start_daily_digest_scheduler():
