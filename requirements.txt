@@ -9,3 +9,5 @@ aiohttp
 requests
 pytest
 motor
+httpx
+python-multipart
